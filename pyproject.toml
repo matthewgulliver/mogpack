@@ -1,0 +1,27 @@
+[project]
+name = "mogpack"
+version = "0.0.1"
+description = "Test dependency and configuration management with Nitpick."
+authors = [{ name = "Matthew Gulliver", email = "hello@matthewgulliver.com" }]
+keywords = ['python']
+requires-python = ">=3.10,<4.0"
+dependencies = [
+    "nitpick>=0.35.0",
+    "mutmut>=3.3.1",
+    "testcontainers>=4.13.0",
+    "assertpy>=1.1",
+    "types-assertpy>=1.1.0.20250502",
+    "pytest-testdox>=3.1.0",
+    "pytest>=7.2.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=7.0.0",
+    "pre-commit>=2.20.0",
+    "tox-uv>=1.11.3",
+    "mypy>=0.991",
+    "deptry>=0.23.0",
+    "ruff>=0.11.5",
+    "mkdocs>=1.4.2",
+    "mkdocs-material>=8.5.10",
+    "mkdocstrings[python]>=0.26.1",
+    "python-dotenv>=1.2.1",
+]
