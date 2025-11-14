@@ -1,0 +1,58 @@
+["pyproject.toml".tool.mypy]
+plugins = "pydantic.mypy"
+files = ["src"]
+strict = true
+
+["pyproject.toml".tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["--testdox", "--cov"]
+markers = [
+    "domain:",
+    "app:",
+    "contract:",
+    "e2e",
+]
+
+["pyproject.toml".tool.coverage.run]
+source = ["src"]
+branch = true
+omit = ["tests/*", "*/conftest.py"]
+
+["pyproject.toml".tool.coverage.report]
+show_missing = true
+fail_under = 95
+
+["pyproject.toml".tool.coverage.html]
+directory = "htmlcov"
+
+["pyproject.toml".tool.ruff]
+target-version = "py310"
+line-length = 100
+fix = true
+
+["pyproject.toml".tool.ruff.lint]
+select = [
+    "YTT",
+    "S",
+    "B",
+    "A",
+    "C4",
+    "T10",
+    "SIM",
+    "I",
+    "C90",
+    "E",
+    "W",
+    "F",
+    "PGH",
+    "UP",
+    "RUF",
+    "TRY",
+]
+
+
+["pyproject.toml".tool.mutmut]
+debug = true
+paths_to_mutate = ["src/"]
+do_not_mutate = ["*__init__*"]
+pytest_add_cli_args_test_selection = ["-m", "not (paid or slow or e2e)"]

@@ -1,0 +1,5 @@
+include nitpick-style.toml
+include README.md
+include LICENSE
+recursive-include src/mogpack *.py
+recursive-include src/mogpack *.typed
