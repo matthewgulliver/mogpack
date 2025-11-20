@@ -91,11 +91,7 @@ def main() -> int:
         return init_project(git_ref=args.ref)
 
     # Default to init if no command specified
-    if args.command is None:
-        return init_project(git_ref=args.ref)
-
-    parser.print_help()
-    return 0
+    return init_project(git_ref=args.ref)
 
 
 if __name__ == "__main__":
